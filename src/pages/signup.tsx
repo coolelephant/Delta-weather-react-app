@@ -2,7 +2,7 @@ import { Button, Grid, Paper, TextField } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
-import { Copyright } from "../components/common/Copyright";
+import { Copyright } from "../components/common/copyright";
 
 export const SignUp = () => {
   return (
