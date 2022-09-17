@@ -1,9 +1,10 @@
-import { Button, Grid, Paper, TextField } from "@mui/material";
+import { Button, colors, Grid, Paper, TextField } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Typography from "@mui/material/Typography";
 import { Copyright } from "../components/common/copyright";
 import { Box } from "@mui/system";
+import { blue, deepOrange, green, yellow } from "@mui/material/colors";
 
 export const SignUp = () => {
   return (
@@ -29,20 +30,20 @@ export const SignUp = () => {
           flexDirection={"column"}
           alignItems={"center"}
         >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-            <LockOutlinedIcon />
+          <Avatar sx={{ m: 1, bgcolor: green[600] } }>
+            <AccountCircleIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          <Grid container spacing={1}>
-            <Grid item xs={12}>
+          <Grid container spacing={1} justifyContent={"center"}>
+            <Grid item xs={11.5}>
               <TextField fullWidth label={"email"} />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={11.5}>
               <TextField fullWidth label={"password"} />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={11.5}>
               <TextField fullWidth label={"name"} />
             </Grid>
           </Grid>
@@ -53,6 +54,7 @@ export const SignUp = () => {
               mt: 3,
               mb: 2,
               alignItems: "center",
+              bgcolor: green[300]
             }}
           >
             Sign Up
