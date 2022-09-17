@@ -54,6 +54,7 @@ export const SignUp = () => {
               mt: 3,
               mb: 2,
               alignItems: "center",
+              bgcolor: green[300]
             }}
           >
             Sign Up
