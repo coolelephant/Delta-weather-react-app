@@ -6,11 +6,25 @@ import { Copyright } from "../components/common/copyright";
 
 export const SignUp = () => {
   return (
-    <Grid container justifyContent={"center"} height={"100vh"}>
-      <Grid item xs={12} md={5} component={Paper} elevation={4} square>
-        <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-          <LockOutlinedIcon />
-        </Avatar>
+    <Grid
+      container
+      // textAlign={"center"}
+      justifyContent={"center"}
+      height={"100vh"}
+    >
+      <Grid
+        textAlign={"center"}
+        item
+        xs={12}
+        md={5}
+        component={Paper}
+        elevation={4}
+        square
+        spacing={5}
+      >
+        {/* <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}> */}
+        <LockOutlinedIcon />
+        {/* </Avatar> */}
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
