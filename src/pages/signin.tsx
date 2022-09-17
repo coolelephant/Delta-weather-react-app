@@ -51,6 +51,7 @@ export const SignIn = () => {
               mt: 3,
               mb: 2,
               alignItems: "center",
+              backgroundColor: green[300]
             }}
           >
             Sign In
