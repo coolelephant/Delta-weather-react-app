@@ -1,7 +1,7 @@
-import { Card, CardContent, Typography } from "@mui/material";
+import { Stack } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-
 import { Box } from "@mui/system";
+import { ReactNode } from "react";
 
 const useStyles = makeStyles({
   root: {
@@ -10,6 +10,7 @@ const useStyles = makeStyles({
     border: `1px solid red`,
     display: `flex`,
     justifyContent: `center`,
+    // opacity: `0.6`,
   },
   card: {
     margin: `auto`,
@@ -20,15 +21,19 @@ const useStyles = makeStyles({
   },
 });
 
-export const CardFrame = () => {
+interface ICardFrameProps {
+  children: ReactNode;
+  image: string;
+}
+export const CardFrame = ({ children, image }: ICardFrameProps) => {
   const classes = useStyles();
   return (
-    <Box className={classes.root}>
+    <Box
+      className={classes.root}
+      // style={{ backgroundImage: `url(${image})` }}
+    >
       <Box className={classes.card}>
-        <Typography gutterBottom variant={"h5"} component={"div"}>
-          {"위치"}
-        </Typography>
-        <Typography variant={"body2"}>{"시간"}</Typography>
+        <Stack spacing={3}>{children}</Stack>
       </Box>
     </Box>
   );
