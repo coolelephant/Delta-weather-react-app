@@ -7,17 +7,38 @@ import { Copyright } from "../components/common/copyright";
 export const SignUp = () => {
   return (
     <Grid container justifyContent={"center"} height={"100vh"}>
-      <Grid item xs={12} md={5} component={Paper} elevation={4} square>
-        <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+      <Grid item xs={12} md={5} component={Paper} elevation={4} square textAlign={'center'}>
+        {/* <Avatar sx={{ 
+          marginTop: 8,
+          m: 1, bgcolor: "secondary.main", 
+          alignItems: 'center'
+        }}> */}
           <LockOutlinedIcon />
-        </Avatar>
+        {/* </Avatar> */}
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
-        <TextField fullWidth label={"email"} />
-        <TextField fullWidth label={"password"} />
-        <TextField fullWidth label={"name"} />
-        <Button>회원가입</Button>
+        <Grid container spacing={1}>
+          <Grid item xs={12}>
+            <TextField fullWidth label={"email"}/> 
+          </Grid>
+          <Grid item xs={12}>
+            <TextField fullWidth label={"password"} />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField fullWidth label={"name"} />
+          </Grid>
+        </Grid>
+        <Button
+                type="submit"
+                variant="contained"
+                sx={{ 
+                  mt: 3, mb: 2,
+                  alignItems: 'center',
+                }}
+              >
+                Sign Up
+        </Button>
         <Copyright />
       </Grid>
     </Grid>
