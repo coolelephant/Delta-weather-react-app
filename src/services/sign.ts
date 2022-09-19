@@ -13,8 +13,9 @@ interface ISignUpProps {
 }
 
 export const signUp = (props: ISignUpProps) => {
-  const url = `http://localhost:8080/members`;
-  return axios
-    .post<IResponseAuth>(url, { ...props })
-    .then((res) => console.log(res.data));
+  const url = `/members`;
+  return axios.post<IResponseAuth>(url, { ...props }).then((res) => {
+    console.log(res.data);
+    return res.data;
+  });
 };

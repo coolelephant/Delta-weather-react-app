@@ -26,16 +26,15 @@ export const SignUp = () => {
     setName(e.target.value);
   };
 
-  // const { signupHandler, data } = useSignup(signUp, {
-  //   email: email,
-  //   password: password,
-  //   name: name,
-  // });
+  const { signupHandler, data } = useSignup(signUp, {
+    email: email,
+    password: password,
+    name: name,
+  });
 
-  const signupHandler = () => {
-    signUp({ email: email, password: password, name: name });
-  };
-
+  // const signupHandler = () => {
+  //   signUp({ email: email, password: password, name: name });
+  // };
   return (
     <Grid
       container
