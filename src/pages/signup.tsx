@@ -33,18 +33,15 @@ export const SignUp = () => {
     name: name,
   });
 
-<<<<<<< HEAD
   // const signupHandler = () => {
   //   signUp({ email: email, password: password, name: name });
   // };
-=======
   const navigate = useNavigate();
 
   const onClickButton = () => {
     navigate("/signin");
   };
 
->>>>>>> d9b027632f771baaeba820e84dd493fe1c585bb1
   return (
     <Grid
       container
@@ -101,8 +98,13 @@ export const SignUp = () => {
               />
             </Grid>
           </Grid>
-          <Grid alignSelf={"end"} sx={{right:0, marginRight:"10px"}}>
-            <Button size="small" variant="text" onClick={onClickButton} sx={{color : green[100]}}>
+          <Grid alignSelf={"end"} sx={{ right: 0, marginRight: "10px" }}>
+            <Button
+              size="small"
+              variant="text"
+              onClick={onClickButton}
+              sx={{ color: green[100] }}
+            >
               If you already have an account, Sign in
             </Button>
           </Grid>
