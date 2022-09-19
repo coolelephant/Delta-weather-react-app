@@ -2,11 +2,18 @@ import { Button, Grid, Paper, TextField } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
+import { useNavigate } from "react-router-dom";
 import { Copyright } from "../components/common/copyright";
 import { Box } from "@mui/system";
 import { green } from "@mui/material/colors";
 
 export const SignIn = () => {
+  const navigate = useNavigate();
+
+  const onClickButton = () => {
+    navigate("/signup");
+  };
+
   return (
     <Grid
       container
@@ -15,7 +22,7 @@ export const SignIn = () => {
       height={"100vh"}
     >
       <Grid
-        textAlign={"center"}
+        // textAlign={"center"}
         item
         xs={12}
         md={5} 
@@ -44,6 +51,11 @@ export const SignIn = () => {
               <TextField fullWidth label={"password"} />
             </Grid>
           </Grid>
+          <Grid alignSelf={"end"} sx={{right:0, marginRight:"10px"}}>
+            <Button size="small" variant="text" onClick={onClickButton} sx={{color : green[100]}}>
+              Don't you have an account? Sign up
+            </Button>
+          </Grid>
           <Button
             type="submit"
             variant="contained"
@@ -58,7 +70,7 @@ export const SignIn = () => {
           </Button>
           <Copyright />
         </Box>
-          {/* <>signin</> */}
+
       </Grid>
     </Grid>
   );
