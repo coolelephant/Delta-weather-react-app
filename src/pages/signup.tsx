@@ -1,12 +1,41 @@
 import { Button, colors, Grid, Paper, TextField } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Typography from "@mui/material/Typography";
 import { Copyright } from "../components/common/copyright";
 import { Box } from "@mui/system";
 import { blue, deepOrange, green, yellow } from "@mui/material/colors";
+import { ChangeEvent, useState } from "react";
+import { signUp } from "../services/sign";
+import { useSignup } from "../hooks/use-signup";
 
 export const SignUp = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+
+  const handleEmail = (e: ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePassword = (e: ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value);
+  };
+
+  const handleName = (e: ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
+  };
+
+  // const { signupHandler, data } = useSignup(signUp, {
+  //   email: email,
+  //   password: password,
+  //   name: name,
+  // });
+
+  const signupHandler = () => {
+    signUp({ email: email, password: password, name: name });
+  };
+
   return (
     <Grid
       container
@@ -16,6 +45,7 @@ export const SignUp = () => {
     >
       <Grid
         textAlign={"center"}
+        container
         item
         xs={12}
         md={5}
@@ -30,7 +60,7 @@ export const SignUp = () => {
           flexDirection={"column"}
           alignItems={"center"}
         >
-          <Avatar sx={{ m: 1, bgcolor: green[600] } }>
+          <Avatar sx={{ m: 1, bgcolor: green[600] }}>
             <AccountCircleIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -38,13 +68,28 @@ export const SignUp = () => {
           </Typography>
           <Grid container spacing={1} justifyContent={"center"}>
             <Grid item xs={11.5}>
-              <TextField fullWidth label={"email"} />
+              <TextField
+                fullWidth
+                label={"email"}
+                value={email}
+                onChange={handleEmail}
+              />
             </Grid>
             <Grid item xs={11.5}>
-              <TextField fullWidth label={"password"} />
+              <TextField
+                fullWidth
+                label={"password"}
+                value={password}
+                onChange={handlePassword}
+              />
             </Grid>
             <Grid item xs={11.5}>
-              <TextField fullWidth label={"name"} />
+              <TextField
+                fullWidth
+                label={"name"}
+                value={name}
+                onChange={handleName}
+              />
             </Grid>
           </Grid>
           <Button
@@ -54,8 +99,9 @@ export const SignUp = () => {
               mt: 3,
               mb: 2,
               alignItems: "center",
-              bgcolor: green[300]
+              bgcolor: green[300],
             }}
+            onClick={signupHandler}
           >
             Sign Up
           </Button>
