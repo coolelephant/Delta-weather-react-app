@@ -14,24 +14,16 @@ interface ISignUpProps {
 
 export const signUp = (props: ISignUpProps) => {
   const url = `/members`;
-  return axios
-    .post<IResponseAuth>(
-      url,
-      { ...props },
-      { headers: { "Access-Control-Allow-Origin": "*" } }
-    )
-    .then((res) => {
-      console.log(res.data);
-      return res.data;
-    });
+  return axios.post<IResponseAuth>(url, { ...props }).then((res) => {
+    console.log(res.data);
+    return res.data;
+  });
 };
 
 export const test = () => {
   const url = `/member`;
-  return axios
-    .get(url, { headers: { "Access-Control-Allow-Origin": "*" } })
-    .then((res) => {
-      console.log(res.data);
-      return res.data;
-    });
+  return axios.get(url).then((res) => {
+    console.log(res.data);
+    return res.data;
+  });
 };

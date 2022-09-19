@@ -5,13 +5,11 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import axios from "axios";
 
-export const API_URL = process.env.REACT_APP_API_URL;
+export const API_URL = "http://localhost:8080";
 
 axios.defaults.baseURL = API_URL;
-axios.defaults.headers.common = {
-  origin: "*",
-  Credential: true,
-};
+axios.defaults.withCredentials = true;
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
