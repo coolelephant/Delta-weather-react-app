@@ -7,7 +7,7 @@ import { Box } from "@mui/system";
 import { useNavigate } from "react-router-dom";
 import { blue, deepOrange, green, yellow } from "@mui/material/colors";
 import { ChangeEvent, useState } from "react";
-import { signUp } from "../services/sign";
+import { signUp, test } from "../services/sign";
 import { useSignup } from "../hooks/use-signup";
 
 export const SignUp = () => {
@@ -37,6 +37,10 @@ export const SignUp = () => {
   //   signUp({ email: email, password: password, name: name });
   // };
   const navigate = useNavigate();
+
+  const testHandler = () => {
+    test();
+  };
 
   const onClickButton = () => {
     navigate("/signin");
@@ -122,6 +126,7 @@ export const SignUp = () => {
             Sign Up
           </Button>
           <Copyright />
+          <Button onClick={testHandler}>test</Button>
         </Box>
       </Grid>
     </Grid>
