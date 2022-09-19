@@ -32,5 +32,6 @@ export const test = () => {
     .get(url, { headers: { "Access-Control-Allow-Origin": "*" } })
     .then((res) => {
       console.log(res.data);
+      return res.data;
     });
 };
