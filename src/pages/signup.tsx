@@ -4,6 +4,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Typography from "@mui/material/Typography";
 import { Copyright } from "../components/common/copyright";
 import { Box } from "@mui/system";
+import { useNavigate } from "react-router-dom";
 import { blue, deepOrange, green, yellow } from "@mui/material/colors";
 import { ChangeEvent, useState } from "react";
 import { signUp } from "../services/sign";
@@ -32,9 +33,18 @@ export const SignUp = () => {
     name: name,
   });
 
+<<<<<<< HEAD
   // const signupHandler = () => {
   //   signUp({ email: email, password: password, name: name });
   // };
+=======
+  const navigate = useNavigate();
+
+  const onClickButton = () => {
+    navigate("/signin");
+  };
+
+>>>>>>> d9b027632f771baaeba820e84dd493fe1c585bb1
   return (
     <Grid
       container
@@ -54,7 +64,7 @@ export const SignUp = () => {
         spacing={5}
       >
         <Box
-          marginTop={"40px"}
+          marginTop={"90px"}
           display={"flex"}
           flexDirection={"column"}
           alignItems={"center"}
@@ -90,6 +100,11 @@ export const SignUp = () => {
                 onChange={handleName}
               />
             </Grid>
+          </Grid>
+          <Grid alignSelf={"end"} sx={{right:0, marginRight:"10px"}}>
+            <Button size="small" variant="text" onClick={onClickButton} sx={{color : green[100]}}>
+              If you already have an account, Sign in
+            </Button>
           </Grid>
           <Button
             type="submit"
