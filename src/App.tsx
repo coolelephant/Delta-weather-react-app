@@ -8,6 +8,12 @@ import { SignUp } from "./pages/signup";
 
 const queryClient = new QueryClient();
 
+declare global {
+  interface Window {
+    kakao: any;
+  }
+}
+
 const App = () => {
   return (
     <StylesProvider injectFirst>
