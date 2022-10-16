@@ -49,13 +49,12 @@ export const SignUp = () => {
   return (
     <Grid
       container
-      // textAlign={"center"}
+      //textAlign={"center"}
       justifyContent={"center"}
       height={"100vh"}
     >
       <Grid
         textAlign={"center"}
-        container
         item
         xs={12}
         md={5}
@@ -65,7 +64,7 @@ export const SignUp = () => {
         spacing={5}
       >
         <Box
-          marginTop={"90px"}
+          marginTop={"40px"}
           display={"flex"}
           flexDirection={"column"}
           alignItems={"center"}

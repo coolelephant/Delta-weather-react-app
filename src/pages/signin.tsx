@@ -22,7 +22,7 @@ export const SignIn = () => {
       height={"100vh"}
     >
       <Grid
-        // textAlign={"center"}
+        textAlign={"center"}
         item
         xs={12}
         md={5} 
